@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  display: flex;
+  top: 0px;
+  height: 90px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo {
+  max-height: 100%;
+}
+
+.nav>* {
+  padding: 10px;
+}
