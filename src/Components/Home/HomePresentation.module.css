@@ -1,0 +1,11 @@
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  opacity: .8;
+  max-width: 70%;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+}

@@ -1,7 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&display=swap');
+
+
+:root {
+  --emphasis-color: #d04461;
+  --emphasis-color-two: #fb6784;
+  --light-color: #f1f1f1;
+  --dark-color: #1b1b1b;
+  --type-title: 'Urbanist', sans-serif;
+  --type-text: 'Libre Franklin', sans-serif;
+}
+
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
+  font-family: var(--type-text);
 }
 
 a {
   text-decoration: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+p,
+li {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
 }

@@ -1,14 +1,17 @@
 import './App.css';
-import Header from './Components/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {UserContextData} from './Context/UserContext'
+import Home from './Components/Home/Home';
 
 function App() {
   return (
     <>
     <BrowserRouter>
-      <Header />
-      <Routes>
-      </Routes>
+      <UserContextData>
+        <Routes>
+          <Route path="/*" element={<Home />}/>
+        </Routes>
+      </UserContextData>
     </BrowserRouter>
     </>
   );
