@@ -22,3 +22,15 @@ export function POST_LOGIN(body){
     }
   }
 }
+
+export function GET_USER(token){
+  return {
+    url: `${API_URL}/user`,
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    }
+  }
+}

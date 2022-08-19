@@ -3,31 +3,20 @@ import useForm from '../../Hooks/useForm'
 import Input from '../Elements/Input'
 import Button from '../Elements/Button'
 import styles from './Login.module.css'
-import { POST_LOGIN } from '../../API'
-import useFetch from '../../Hooks/useFetch'
 import Error from '../Elements/Error'
+import { UserContext } from '../../Context/UserContext'
 
 const Login = () => {
 
+  const {userLogin, loading, error} = React.useContext(UserContext)
+
   const email = useForm('email');
   const password = useForm();
-  const {data, loading, error, request} = useFetch();
-
-  React.useEffect(() => {
-    if (data && data.token) {
-      window.localStorage.setItem('token', data.token)
-    }}, [data])
 
   async function handleSubmit(event){
     event.preventDefault();
     if (email.validate() && password.validate()){
-      
-      const {url, options} = POST_LOGIN({email: email.value, password: password.value});
-
-      await request(url, options);
-      
-    } else {
-      console.log('Não login')
+      userLogin(email.value, password.value);
     }
   }
 
