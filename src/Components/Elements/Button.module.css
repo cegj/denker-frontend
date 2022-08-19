@@ -23,9 +23,16 @@ button {
 .filled:hover,
 .filled:focus {
   border: 2px solid var(--emphasis-color);
+  box-shadow: 0px 0px 0px 2px var(--emphasis-color-two);
 }
 
 .unfilled:hover,
 .unfilled:focus {
-  border: 2px solid var(--emphasis-color);
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 0px 2px var(--emphasis-color-two);
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: wait;
 }

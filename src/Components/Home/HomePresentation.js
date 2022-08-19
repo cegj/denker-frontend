@@ -8,7 +8,7 @@ const HomePresentation = () => {
       <p>Denker é uma rede social para dividir seus pensamentos com amigos, ler o que eles andam compartilhando e, ainda, comentar e curtir!</p>
       <div className={styles.buttonContainer}>
         <Button to="/signin">Entrar</Button>
-        <Button to="/signup">Cadastrar-se</Button>
+        <Button unfilled to="/signup">Cadastrar-se</Button>
       </div>
     </>
 )

@@ -36,7 +36,7 @@
 }
 
 .titleContainer h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: var(--type-title);
   font-weight: bold;
   color: var(--emphasis-color-two);

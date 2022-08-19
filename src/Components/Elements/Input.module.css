@@ -1,0 +1,28 @@
+.formControl {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: .2rem;
+}
+
+.input {
+  display: block;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 2.3rem;
+  font-size: 1.1rem;
+  padding: .5rem 1rem;
+  font-family: var(--type-title);
+  border: 2px solid var(--emphasis-color-two);
+  transition: .2s;
+
+}
+
+input::placeholder {
+  opacity: 0.3;
+}

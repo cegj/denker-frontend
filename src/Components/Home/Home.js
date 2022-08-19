@@ -2,8 +2,8 @@ import React from 'react'
 import styles from './Home.module.css'
 import HomePresentation from './HomePresentation'
 import {Routes, Route} from 'react-router-dom'
-import Login from '../Login'
-import Register from '../Register'
+import Login from './Login'
+import Register from './Register'
 
 const Home = () => {
   return (
