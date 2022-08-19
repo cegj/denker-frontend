@@ -1,4 +1,4 @@
-button {
+.button {
   cursor: pointer;
   border-radius: 4px;
   min-width: 8rem;
@@ -8,6 +8,7 @@ button {
   font-family: var(--type-title);
   border: 2px solid var(--emphasis-color-two);
   transition: .2s;
+  margin-bottom: .5rem;
 }
 
 .filled {

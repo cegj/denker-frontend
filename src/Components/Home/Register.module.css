@@ -1,3 +1,33 @@
 .registerForm {
   max-width: 20rem;
 }
+
+.inputFileControl {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.inputFilelabel {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: .2rem;
+}
+
+.inputFile {
+  display: block;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 2.3rem;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  font-family: var(--type-title);
+  border: 2px solid var(--emphasis-color-two);
+  transition: .2s;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+}

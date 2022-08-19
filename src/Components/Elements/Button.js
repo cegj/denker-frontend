@@ -12,10 +12,10 @@ const Button = ({to, unfilled, children, ...props}) => {
   if (to)
   return (
     <Link to={to}>
-      <button className={styles[styleType]} {...props}>{children}</button>
+      <button className={`${styles.button} ${styles[styleType]}`} {...props}>{children}</button>
     </Link>
   )
-  else return <button className={styles[styleType]} {...props}>{children}</button>
+  else return <button className={`${styles.button} ${styles[styleType]}`} {...props}>{children}</button>
 }
 
 export default Button
