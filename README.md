@@ -26,10 +26,10 @@ As imagens abaixo representam o estado o Denker no momento, ou seja, não repres
 <p>Tela de login</p>
 <img src="https://imgur.com/wRd7G4K.png" alt="Tela de login">
 
-<p>Perfil do usuário</p>
-<img src="https://imgur.com/vlJ0WCx.png" alt="Perfil do usuário">
-
 <p>Timeline / feed</p>
 <img src="https://imgur.com/872aNeT.png" alt="Timeline / feed">
+
+<p>Perfil do usuário</p>
+<img src="https://imgur.com/vlJ0WCx.png" alt="Perfil do usuário">
 
 </div>
