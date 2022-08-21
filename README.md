@@ -13,7 +13,7 @@ Denker é uma rede social para compartilhar seus pensamentos e acompanhar os pen
 - CSS;
 - Javascript.
 
-[Backend em REST API com Node.js / Express](github.com/cegj/denker-backend)
+[Backend em REST API com Node.js / Express](https://github.com/cegj/denker-backend)
 
 # Imagens
 
