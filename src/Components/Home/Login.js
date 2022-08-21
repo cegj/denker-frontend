@@ -21,21 +21,24 @@ const Login = () => {
   }
 
   return (
-    <form className={styles.loginForm} onSubmit={handleSubmit}>
-      <Input
-        label="E-mail"
-        id="email"
-        type="text"
-        placeholder="exemplo@exemplo.com"
-        {...email} 
-      />
-      <Input label="Senha" id="password" type="password" {...password} />
-      <div className={styles.buttonContainer}>
-        {loading ? <Button disabled>Entrando...</Button> : <Button>Entrar</Button>}
-        <Button unfilled to="/">Voltar</Button>
-      </div>
-      {error && <Error error={error}/>}
-    </form>
+    <>
+      <h2>Entre e comece a compartilhar</h2>
+      <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <Input
+          label="E-mail"
+          id="email"
+          type="text"
+          placeholder="exemplo@exemplo.com"
+          {...email} 
+        />
+        <Input label="Senha" id="password" type="password" {...password} />
+        <div className={styles.buttonContainer}>
+          {loading ? <Button disabled>Entrando...</Button> : <Button>Entrar</Button>}
+          <Button unfilled to="/">Voltar</Button>
+        </div>
+        {error && <Error error={error}/>}
+      </form>
+    </>
   )
 }
 

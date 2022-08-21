@@ -1,0 +1,20 @@
+.userBox {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 10px;
+}
+
+.userInfoContent>h1,
+.userInfoContent>span {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+.userInfoContent:last-child {
+  margin-bottom: 0;
+}

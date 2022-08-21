@@ -33,6 +33,7 @@ const useForm = (type) => {
 
   return {
     value,
+    setValue,
     error,
     onChange,
     onBlur: () => validate(value),

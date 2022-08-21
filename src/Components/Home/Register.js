@@ -6,6 +6,7 @@ import styles from './Register.module.css'
 import useFetch from '../../Hooks/useFetch'
 import { POST_CREATE_USER } from '../../API'
 import Error from '../Elements/Error'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
 
@@ -17,9 +18,13 @@ const Register = () => {
   const [image, setImage] = React.useState(null);
   const {data, loading, error, request} = useFetch();
 
+  const navigate = useNavigate();
+
   function handleInputImage({target}){
     setImage(target.files[0])
   }
+
+  const token = window.localStorage.getItem('token');
 
   React.useEffect(() => {
     if (data && data.token) {
@@ -27,7 +32,7 @@ const Register = () => {
     }}, [data])
 
     React.useEffect(() => {},
-    [window.localStorage['token']])
+    [token])
     
   async function handleSubmit(event){
     event.preventDefault();
@@ -42,7 +47,14 @@ const Register = () => {
 
       const {url, options} = POST_CREATE_USER(formData);
 
-      await request(url, options);
+      const {response, json} = await request(url, options);
+
+      if (response.ok) {
+        window.localStorage.setItem('token', json.token)
+        navigate('/')
+      } else {
+        console.log(response, json)
+      }
 
     } else {
       console.log('Não cadastrar')
@@ -50,54 +62,57 @@ const Register = () => {
   }
 
   return (
-    <form className={styles.registerForm} onSubmit={handleSubmit}>
-      <Input
-        label="Nome"
-        id="name"
-        type="text"
-        {...name} 
-      />
-      <Input
-        label="Nome de usuário"
-        id="username"
-        type="text"
-        {...username} 
-      />
-      <Input
-        label="E-mail"
-        id="email"
-        type="text"
-        {...email} 
-      />
-      <Input
-        label="Senha"
-        id="password"
-        type="password"
-        {...password} 
-      />
-      <Input
-        label="Confirmação de senha"
-        id="confirmpassword"
-        type="password"
-        {...confirmPassword} 
-      />
-      <div className={styles.inputFileControl}>
-        <label className={styles.inputFilelabel} htmlFor="image">Foto do usuário:</label>
-        <input 
-          className={styles.inputFile}
-          type="file"
-          id="image"
-          accept='image/png, image/jpeg'
-          onChange={handleInputImage}
-          required
-          />
-      </div>
-      <div className={styles.buttonContainer}>
-        {loading ? <Button disabled>Cadastrando...</Button> : <Button>Cadastrar</Button>}
-        <Button unfilled to="/">Voltar</Button>
-      </div>
-      {error && <Error error={error}/>}
-    </form>
+    <>
+      <h2>Faça parte da comunidade</h2>
+      <form className={styles.registerForm} onSubmit={handleSubmit}>
+        <Input
+          label="Nome"
+          id="name"
+          type="text"
+          {...name} 
+        />
+        <Input
+          label="Nome de usuário"
+          id="username"
+          type="text"
+          {...username} 
+        />
+        <Input
+          label="E-mail"
+          id="email"
+          type="text"
+          {...email} 
+        />
+        <Input
+          label="Senha"
+          id="password"
+          type="password"
+          {...password} 
+        />
+        <Input
+          label="Confirmação de senha"
+          id="confirmpassword"
+          type="password"
+          {...confirmPassword} 
+        />
+        <div className={styles.inputFileControl}>
+          <label className={styles.inputFilelabel} htmlFor="image">Foto do usuário:</label>
+          <input 
+            className={styles.inputFile}
+            type="file"
+            id="image"
+            accept='image/png, image/jpeg'
+            onChange={handleInputImage}
+            required
+            />
+        </div>
+        <div className={styles.buttonContainer}>
+          {loading ? <Button disabled>Cadastrando...</Button> : <Button>Cadastrar</Button>}
+          <Button unfilled to="/">Voltar</Button>
+        </div>
+        {error && <Error error={error}/>}
+      </form>
+    </>
   )
 }
 

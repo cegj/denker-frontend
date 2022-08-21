@@ -44,17 +44,12 @@ export const UserContextData = ({children}) => {
 
 
   React.useEffect(() => {
-    async function autoLogin(){
-      const token = window.localStorage.getItem('token');
-      if (token) getUser(token)
+    async function autoLogin(token){
+      await getUser(token);
     }
-    autoLogin();
-    }, [getUser])
-
-  React.useEffect(() => {
-    if (loggedIn && userData){
-      navigate('/timeline')
-    }}, [loggedIn, userData, navigate])
+    const token = window.localStorage.getItem('token');
+    if (!loggedIn && token) autoLogin(token)
+    }, [loggedIn, getUser])
 
   async function userLogin(email, password) {
     try {

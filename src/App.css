@@ -7,6 +7,7 @@
   --emphasis-color-two: #fb6784;
   --light-color: #f1f1f1;
   --dark-color: #1b1b1b;
+  --dark-color-subtle: #646464;
   --type-title: 'Urbanist', sans-serif;
   --type-text: 'Libre Franklin', sans-serif;
 }
@@ -19,6 +20,7 @@
 
 a {
   text-decoration: none;
+  color: var(--emphasis-color)
 }
 
 body,
@@ -32,4 +34,50 @@ li {
   padding: 0;
   margin: 0;
   font-weight: normal;
+}
+
+/* Background */
+body {
+  background-color: #f9f9f9;
+  opacity: 1;
+  background: radial-gradient(circle, transparent 20%, #f9f9f9 20%, #f9f9f9 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #f9f9f9 20%, #f9f9f9 80%, transparent 80%, transparent) 25px 25px, linear-gradient(#f1f1f1 2px, transparent 2px) 0 -1px, linear-gradient(90deg, #f1f1f1 2px, #f9f9f9 2px) -1px 0;
+  background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+}
+
+.mainContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.anime {
+  transform: translateX(-20px);
+  opacity: 0;
+  animation: .3s anime forwards;
+}
+
+@keyframes anime {
+  to {
+    transform: initial;
+    opacity: 1;
+  }
+}
+
+.loading {
+  content: '';
+  display: block;
+  margin: 15px auto;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 5px solid rgba(0, 0, 0, .1);
+  border-right: 10px solid transparent;
+  animation: 1s loading infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
 }

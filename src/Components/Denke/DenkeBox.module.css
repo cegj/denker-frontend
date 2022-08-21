@@ -1,0 +1,56 @@
+.denkeBox {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 120px auto;
+  grid-template-rows: auto auto auto;
+  gap: 0px 1rem;
+  margin-bottom: 1rem;
+}
+
+.denkeBox.noAvatar {
+  grid-template-columns: auto;
+}
+
+.userContainer {
+  grid-row: 1 / 4;
+  grid-column: 1 / 2;
+}
+
+.denkeContainer {
+  display: block;
+  background-color: #fffbb4;
+  padding: 1rem;
+  border-radius: 0px 20px 20px 20px;
+  color: var(--dark-color)
+}
+
+.noAvatar>.denkeContainer {
+  border-radius: 5px 20px 20px 20px;
+}
+
+.denkeContainer:hover {
+  background-color: #fffa9d;
+}
+
+.denkeContainer>img {
+  margin-top: 1rem;
+  grid-column: 2;
+  width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.denkeContainer>p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.dateContainer {
+  font-size: .8rem;
+  color: var(--dark-color-subtle);
+  text-align: right;
+}

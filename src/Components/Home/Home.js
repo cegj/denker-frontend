@@ -4,8 +4,19 @@ import HomePresentation from './HomePresentation'
 import {Routes, Route} from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
+import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../../Context/UserContext'
 
 const Home = () => {
+
+  const {loggedIn, userData} = React.useContext(UserContext)
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (loggedIn && userData){
+      navigate('/user/timeline')
+    }}, [loggedIn, userData, navigate])
+
   return (
     <main className={styles.home}>
       <div className={styles.img}></div>
@@ -15,7 +26,6 @@ const Home = () => {
             <img src="denker_logo.svg" alt="Denker"/>
             <h1>Denker</h1>
           </div>
-          <h2>Compartilhe seus pensamentos</h2>
           <Routes>
             <Route path="/" element={<HomePresentation />} />
             <Route path="/signin" element={<Login />}/>

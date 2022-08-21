@@ -1,0 +1,75 @@
+.denkeForm {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.denkeForm textarea {
+  height: 90px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  resize: none;
+  border-radius: 10px 10px 0 10px;
+}
+
+.denkeForm textarea:focus,
+.denkeForm textarea:hover {
+  outline: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .05);
+}
+
+.btnsContainer {
+  display: flex;
+  position: relative;
+  top: -7px;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.denkeForm button,
+.denkeForm span {
+  border: none;
+  color: #fff;
+  border-radius: 5px 0 5px 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: var(--type-title);
+  padding: .5em 1.2em;
+}
+
+.denkeForm button {
+  background-color: var(--emphasis-color-two);
+}
+
+.denkeForm span {
+  background-color: var(--dark-color-subtle);
+  font-size: .8rem;
+  opacity: .8;
+}
+
+.denkeForm button:focus,
+.denkeForm button:hover {
+  background-color: var(--emphasis-color);
+}
+
+.denkeForm span:focus,
+.denkeForm span:hover {
+  opacity: 1;
+}
+
+.imagePreview {
+  max-width: 350px;
+  height: 150px;
+  border-radius: 10px;
+  display: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 0 0 auto;
+  margin-bottom: 1rem;
+  margin-top: -.8rem;
+}
