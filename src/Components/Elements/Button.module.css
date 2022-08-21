@@ -9,6 +9,7 @@
   border: 2px solid var(--emphasis-color-two);
   transition: .2s;
   margin-bottom: .5rem;
+  font-weight: bold;
 }
 
 .filled {
