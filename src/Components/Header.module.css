@@ -28,3 +28,11 @@
   color: var(--emphasis-color);
   cursor: pointer;
 }
+
+.nav>a:hover {
+  color: var(--emphasis-color-two)
+}
+
+.nav>span:hover {
+  color: var(--emphasis-color-two)
+}

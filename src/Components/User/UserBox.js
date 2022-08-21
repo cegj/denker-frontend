@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { GET_USER_BY_ID } from '../../API';
 import useDate from '../../Hooks/useDate';
 import useFetch from '../../Hooks/useFetch'
+import Button from '../Elements/Button';
 import Error from '../Elements/Error';
 import UserAvatar from '../Elements/UserAvatar';
 import styles from './UserBox.module.css'
@@ -30,11 +31,11 @@ const UserBox = ({userId}) => {
       <div className={styles.userInfoContent}>
         <h1>{data.user.name}</h1>
         <span>{data.user.email}</span>
-        <span>Entrou em {convertDate(data.user.createdAt)}</span>
+        <span>Denker desde {convertDate(data.user.createdAt)}</span>
         <span><Link to="followers">0 seguidores</Link> | <Link to='following'>0 seguindo</Link></span>
       </div>
-      <div>
-        <button>Seguir</button>
+      <div className={styles.buttonContainer}>
+        <Button unfilled>Seguir</Button>
       </div>
     </section>
   )
