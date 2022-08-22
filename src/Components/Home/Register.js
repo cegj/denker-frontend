@@ -62,7 +62,7 @@ const Register = () => {
   }
 
   return (
-    <>
+    <section className="anime">
       <h2>Faça parte da comunidade</h2>
       <form className={styles.registerForm} onSubmit={handleSubmit}>
         <Input
@@ -112,7 +112,7 @@ const Register = () => {
         </div>
         {error && <Error error={error}/>}
       </form>
-    </>
+    </section>
   )
 }
 

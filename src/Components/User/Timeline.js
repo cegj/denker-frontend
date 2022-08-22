@@ -7,7 +7,7 @@ const Timeline = () => {
 
   return (
     <div className="anime">
-      <DenkeForm />
+      <DenkeForm placeholder={"No que você está pensando?"}/>
       <DenkesList />
     </div>
   )

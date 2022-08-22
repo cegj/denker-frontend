@@ -21,7 +21,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <section className="anime">
       <h2>Entre e comece a compartilhar</h2>
       <form className={styles.loginForm} onSubmit={handleSubmit}>
         <Input
@@ -38,7 +38,7 @@ const Login = () => {
         </div>
         {error && <Error error={error}/>}
       </form>
-    </>
+    </section>
   )
 }
 

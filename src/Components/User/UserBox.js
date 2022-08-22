@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { GET_USER_BY_ID } from '../../API';
+import { UserContext } from '../../Context/UserContext';
 import useDate from '../../Hooks/useDate';
 import useFetch from '../../Hooks/useFetch'
 import Button from '../Elements/Button';
@@ -9,6 +10,8 @@ import UserAvatar from '../Elements/UserAvatar';
 import styles from './UserBox.module.css'
 
 const UserBox = ({userId}) => {
+
+  const {loggedIn} = React.useContext(UserContext);
 
   const {convertDate} = useDate();
 
@@ -35,7 +38,7 @@ const UserBox = ({userId}) => {
         <span><Link to="followers">0 seguidores</Link> | <Link to='following'>0 seguindo</Link></span>
       </div>
       <div className={styles.buttonContainer}>
-        <Button unfilled>Seguir</Button>
+        {loggedIn && <Button unfilled>Seguir</Button> }
       </div>
     </section>
   )

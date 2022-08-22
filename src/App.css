@@ -36,6 +36,10 @@ li {
   font-weight: normal;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 /* Background */
 body {
   background-color: #f9f9f9;

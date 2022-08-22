@@ -86,3 +86,15 @@ export function GET_USER_BY_ID(id){
     }
   }
 }
+
+export function GET_DENKE(id){
+  return {
+    url: `${API_URL}/denke/${id}`,
+    options: {
+      method: 'GET',
+      headers: {
+        cache: 'no-store'
+      }
+    }
+  }
+}

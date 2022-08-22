@@ -14,6 +14,14 @@
   grid-template-columns: auto;
 }
 
+.denkeBox.reply {
+  margin-left: 6rem;
+}
+
+.denkeBox.replied {
+  margin-right: 6rem;
+}
+
 .userContainer {
   grid-row: 1 / 4;
   grid-column: 1 / 2;
@@ -21,10 +29,16 @@
 
 .denkeContainer {
   display: block;
-  background-color: #fffbb4;
+  background-color: #fffcd7;
   padding: 1rem;
   border-radius: 5px 20px 20px 20px;
   color: var(--dark-color)
+}
+
+.denkeContainer.reply,
+.denkeContainer.replied {
+  background-color: #f0f0f0;
+  padding: .8rem;
 }
 
 .noAvatar>.denkeContainer {
@@ -32,7 +46,12 @@
 }
 
 .denkeContainer:hover {
-  background-color: #fffa9d;
+  background-color: #fffbc2;
+}
+
+.denkeContainer.reply:hover,
+.denkeContainer.replied:hover {
+  background-color: #e9e9e9;
 }
 
 .denkeContainer>img {
@@ -44,8 +63,19 @@
   object-fit: cover;
 }
 
+.denkeContaiener.reply>img,
+.denkeContainer.replied>img {
+  max-height: 180px;
+}
+
 .denkeContainer>p {
   font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.denkeContainer.reply>p,
+.denkeContainer.replied>p {
+  font-size: .95rem;
   line-height: 1.5;
 }
 

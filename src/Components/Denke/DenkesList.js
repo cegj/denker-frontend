@@ -11,7 +11,6 @@ const DenkesList = ({userId, showAvatar = true}) => {
   if (userId) id = userId;
   else token = window.localStorage.getItem('token');
 
-  console.log('Id', id)
 
   const {data, loading, error, request} = useFetch();
 
@@ -20,11 +19,9 @@ const DenkesList = ({userId, showAvatar = true}) => {
       if (id){
         const {url, options} = GET_USER_DENKES(id);
         await request(url, options);
-        console.log('aqui')
       } else if(token) {
         const {url, options} = GET_DENKES(token);
         await request(url, options);
-        console.log('embaixo')
       }
     }
     fetchDenkes()
@@ -36,7 +33,7 @@ const DenkesList = ({userId, showAvatar = true}) => {
   return (
     <section>
       {data.denkes.map((denke) => {
-        return <DenkeBox key={denke.id} denke={denke} showAvatar={showAvatar}/>
+        return <DenkeBox key={denke.id} denkeData={denke} showAvatar={showAvatar}/>
       })}
     </section>
   )

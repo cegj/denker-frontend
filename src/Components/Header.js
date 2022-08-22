@@ -5,18 +5,19 @@ import { UserContext } from '../Context/UserContext'
 
 const Header = () => {
 
-  const {userData, userLogout} = React.useContext(UserContext)
-  const {user} = userData;
+  const {loggedIn, userData, userLogout} = React.useContext(UserContext)
+  let user = null;
+  if (userData) user = userData.user;
 
   return (
 
     <header className={styles.header}>
       <img className={styles.logo} src="/denker_logo.svg" alt="Denker" />
       <nav className={styles.nav}>
-        <Link to="/user/timeline">Linha do tempo</Link>
-        <Link to="/user/search">Buscar usuários</Link>
-        <Link to="/user/">@{user.username}</Link>
-        <span onClick={userLogout}>Sair</span>
+        {loggedIn && <Link to="/user/timeline">Linha do tempo</Link>}
+        {loggedIn && <Link to="/user/search">Buscar usuários</Link>}
+        {loggedIn && <Link to={`/user/${user.id}`}>@{user.username}</Link>}
+        {loggedIn ? <span onClick={userLogout}>Sair</span> : <Link to="/">Entre / Cadastre-se</Link>}
       </nav>
     </header>
   )
