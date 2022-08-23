@@ -79,9 +79,13 @@
   line-height: 1.5;
 }
 
-.dateContainer {
+.infoContainer {
   font-size: .8rem;
   color: var(--dark-color-subtle);
   text-align: right;
-  margin-right: 1rem;
+  padding: .5rem;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
 }

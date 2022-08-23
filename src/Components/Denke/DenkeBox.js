@@ -4,8 +4,9 @@ import styles from './DenkeBox.module.css'
 import useDate from '../../Hooks/useDate'
 import UserAvatar from '../Elements/UserAvatar'
 import { Link } from 'react-router-dom'
+import LikeBtn from '../Elements/LikeBtn'
 
-const DenkeBox = ({denke, type, showAvatar = true}) => {
+const DenkeBox = ({denke, type = 'main', showAvatar = true}) => {
 
   const {convertDate} = useDate();
 
@@ -24,8 +25,9 @@ const DenkeBox = ({denke, type, showAvatar = true}) => {
         denke.image !== "NULL" &&
         <img src={API_DENKE_IMAGE_URL + denke.image} alt="Imagem do Denke" />}
       </Link>
-      <div className={`${styles.dateContainer} ${styles[type]}`}>
+      <div className={`${styles.infoContainer} ${styles[type]}`}>
         <span>{convertDate(denke.updatedAt)}</span>
+        <LikeBtn denkeId={denke.id} />
       </div>
     </article>
   )

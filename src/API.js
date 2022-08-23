@@ -110,3 +110,37 @@ export function GET_REPLIES(id){
     }
   }
 }
+
+
+export function GET_DENKE_LIKES(id){
+  return {
+    url: `${API_URL}/like/denke/${id}`,
+    options: {
+      method: 'GET'
+    }
+  }
+}
+
+export function POST_LIKE(id, token){
+  return {
+    url: `${API_URL}/like/${id}`,
+    options: {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    }
+  }
+}
+
+export function DELETE_LIKE(id, token){
+  return {
+    url: `${API_URL}/like/${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    }
+  }
+}
