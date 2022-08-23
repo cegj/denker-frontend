@@ -98,3 +98,15 @@ export function GET_DENKE(id){
     }
   }
 }
+
+export function GET_REPLIES(id){
+  return {
+    url: `${API_URL}/denke/replies/${id}`,
+    options: {
+      method: 'GET',
+      headers: {
+        cache: 'no-store'
+      }
+    }
+  }
+}

@@ -5,9 +5,9 @@ import { POST_DENKE } from '../../API';
 import useFetch from '../../Hooks/useFetch';
 import Error from '../Elements/Error';
 
-const DenkeForm = () => {
+const DenkeForm = ({setFormSent, replyTo = null, setDenketSent}) => {
 
-  const {loading, error, request} = useFetch();
+  const {loading, error, setError, request} = useFetch();
   const {value, setValue, onChange} = useForm();
   const [image, setImage] = React.useState(null);
 
@@ -20,15 +20,16 @@ const DenkeForm = () => {
       const formData = new FormData();
       formData.append('content', value);
       formData.append('image', image);
+      replyTo && formData.append('reply_to', replyTo);
       const {url, options} = POST_DENKE(token, formData);
-      const {response, json} = await request(url, options);
+      const {response} = await request(url, options);
       if (response.ok) {
         setValue('');
         setImage(null);
+        setFormSent(true);
       }
-      console.log(json)
     } else {
-      console.log('Não!')
+      setError('O Denke deve conter entre 1 e 280 caracteres')
     }
   }
 
@@ -59,15 +60,20 @@ const DenkeForm = () => {
 
   return (
     <>
-      <form className={styles.denkeForm} onSubmit={handleSubmit}>
-        <textarea value={value} onChange={onChange} placeholder="No que você está pensando?" maxLength="280"/>
+      {error && <Error error={error} />}
+      <form className={`anime ${styles.denkeForm}`} onSubmit={handleSubmit}>
+        <textarea
+          value={value}
+          onChange={onChange}
+          placeholder={replyTo ? 'Qual é a sua opinião sobre esse denke?' : 'No que você está pensando agora?'}
+          maxLength="280"
+        />
         <div className={styles.btnsContainer}>
           <span onClick={handleImageBtn}>{!image ? "Incluir imagem" : "Remover imagem"}</span>
           {loading ? <button disabled>Publicando denke...</button> : <button>Publicar denke</button>}
         </div>
         <input style={{display: 'none'}}type="file" id="image" accept="image/png, image/jpeg" onChange={handleImageChange}></input>
       </form>
-      {error && <Error error={error} />}
       <div className={styles.imagePreview} id="imagePreview"></div>
     </>
   )
