@@ -30,7 +30,7 @@ const Profile = () => {
       {error && <Error error={error} />}
       {loading && <div className="loading"></div>}
       {denkes && denkes.length !== 0 && denkes.map((denke) => {
-        return <DenkeBox key={denke.id} denke={denke} type="main" />
+        return <DenkeBox key={denke.id} denke={denke} type="main" showAvatar={false} />
       })}
     </div>
   )

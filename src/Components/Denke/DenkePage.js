@@ -5,9 +5,11 @@ import { GET_DENKE, GET_REPLIES } from '../../API';
 import Error from '../Elements/Error';
 import DenkeBox from './DenkeBox';
 import DenkeForm from './DenkeForm';
+import { UserContext } from '../../Context/UserContext';
 
 const DenkePage = () => {
 
+  const {loggedIn} = React.useContext(UserContext);
   const params = useParams();
   const id = params.id;
   const {loading, error, request} = useFetch();
@@ -42,11 +44,11 @@ const DenkePage = () => {
   if (denke)
   return (
     <>
-      {replied && <DenkeBox type="replied" denke={replied} showAvatar={true} />}
-      <DenkeBox type="main" denke={denke} showAvatar={true}/>
-      <DenkeForm replyTo={denke.id} setFormSent={setFormSent}/>
+      {replied && <DenkeBox type="replied" denke={replied} />}
+      <DenkeBox type="main" denke={denke} />
+      {loggedIn && <DenkeForm replyTo={denke.id} setFormSent={setFormSent}/>}
       {replies && replies.map((reply) => {
-        return <DenkeBox type="reply" denke={reply} showAvatar={true} />
+        return <DenkeBox type="reply" denke={reply} />
       })}
     </>
   )
