@@ -45,7 +45,7 @@ const DenkePage = () => {
   return (
     <>
       {replied && <DenkeBox type="replied" denke={replied} />}
-      <DenkeBox type="main" denke={denke} />
+      <DenkeBox type="main" denke={denke} showLikeBox={true} />
       {loggedIn && <DenkeForm replyTo={denke.id} setFormSent={setFormSent}/>}
       {replies && replies.map((reply) => {
         return <DenkeBox key={reply.id} type="reply" denke={reply} />

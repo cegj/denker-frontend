@@ -65,7 +65,7 @@ const DenkeForm = ({setFormSent, replyTo = null, setDenketSent}) => {
         <textarea
           value={value}
           onChange={onChange}
-          placeholder={replyTo ? 'Qual é a sua opinião sobre esse denke?' : 'No que você está pensando agora?'}
+          placeholder={replyTo ? 'Qual é a sua opinião?' : 'No que você está pensando agora?'}
           maxLength="280"
         />
         <div className={styles.btnsContainer}>

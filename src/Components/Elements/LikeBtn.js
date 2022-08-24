@@ -1,11 +1,11 @@
 import React from 'react'
 import {ReactComponent as Heart} from '../../Assets/icons/heart-fill.svg'
 import { UserContext } from '../../Context/UserContext'
-import { DELETE_LIKE, GET_DENKE_LIKES, POST_LIKE } from '../../API'
+import { DELETE_LIKE, POST_LIKE } from '../../API'
 import useFetch from '../../Hooks/useFetch'
 import styles from './LikeBtn.module.css'
 
-const LikeBtn = ({denkeId}) => {
+const LikeBtn = ({denkeId, likes, setLikes, userLikes, setUserLikes}) => {
 
   const {loggedIn} = React.useContext(UserContext)
 
@@ -15,18 +15,6 @@ const LikeBtn = ({denkeId}) => {
   const {userData} = React.useContext(UserContext)
   const {request} = useFetch();
   const likeNumber = React.useRef(null)
-  const [likes, setLikes] = React.useState(null)
-  const [userLikes, setUserLikes] = React.useState(false);
-
-  // Get and set denke likes
-  React.useEffect(() => {
-    async function getDenkeLikes(){
-      const {url, options} = GET_DENKE_LIKES(denkeId);
-      const {json, response} = await request(url, options);
-      if (response.ok) setLikes(json.denkeLikes)
-    }
-    getDenkeLikes();
-  }, [denkeId, request, userLikes])
 
   // Put total denke likes at DOM
   React.useEffect(() => {
@@ -43,7 +31,7 @@ const LikeBtn = ({denkeId}) => {
         }
       })
     } 
-  }, [likes, userData])
+  }, [likes, setUserLikes, userData])
 
   async function handleClick(){
     if (userLikes){
