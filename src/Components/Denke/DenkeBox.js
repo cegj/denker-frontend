@@ -8,6 +8,7 @@ import LikeBtn from '../Elements/LikeBtn'
 import { GET_DENKE_LIKES } from '../../API'
 import useFetch from '../../Hooks/useFetch'
 import LikesBox from './LikesBox'
+import DeleteBtn from '../Elements/DeleteBtn'
 
 const DenkeBox = ({denke, type = 'main', showLikeBox = false, showAvatar = true}) => {
 
@@ -46,6 +47,7 @@ const DenkeBox = ({denke, type = 'main', showLikeBox = false, showAvatar = true}
         <div className={`${styles.infoContainer} ${styles[type]}`}>
           <span>{convertDate(denke.updatedAt)}</span>
           <LikeBtn likes={likes} setLikes={setLikes} denkeId={denke.id} userLikes={userLikes} setUserLikes={setUserLikes} />
+          <DeleteBtn denkeId={denke.id} denkeUserId={denke.user_id}/>
         </div>
       </article>
       {showLikeBox && likes && likes.length !==0 && <LikesBox likes={likes} />}

@@ -186,3 +186,15 @@ export function DELETE_FOLLOW(id, token){
     }
   }
 }
+
+export function DELETE_DENKE(id, token){
+  return {
+    url: `${API_URL}/denke/${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    }
+  }
+}

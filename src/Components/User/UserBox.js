@@ -12,8 +12,10 @@ const UserBox = ({user, following, followers, setUpdateFollowers}) => {
   const totalFollowing = React.useRef(null);
 
   React.useEffect(() =>{
-    totalFollowers.current.innerText = followers.length;
-    totalFollowing.current.innerText = following.length;
+    if (followers && following){
+      totalFollowers.current.innerText = followers.length;
+      totalFollowing.current.innerText = following.length;
+    }
   },[following, followers])
 
   if (user)

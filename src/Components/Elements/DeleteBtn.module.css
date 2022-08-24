@@ -1,0 +1,23 @@
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 3px;
+  cursor: pointer;
+  min-width: 30px;
+  transition: .1s;
+}
+
+.deleteBtn:hover {
+  transform: scale(1.2);
+}
+
+.deleteBtn>svg {
+  color: var(--dark-color-subtle);
+  height: .9rem;
+}
+
+.liked,
+.liked>svg {
+  color: #9c2f2f;
+}
