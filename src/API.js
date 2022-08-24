@@ -144,3 +144,45 @@ export function DELETE_LIKE(id, token){
     }
   }
 }
+
+export function GET_FOLLOWINGS(id){
+  return {
+    url: `${API_URL}/follow/followings/${id}`,
+    options: {
+      method: 'GET'
+    }
+  }
+}
+
+export function GET_FOLLOWERS(id){
+  return {
+    url: `${API_URL}/follow/followers/${id}`,
+    options: {
+      method: 'GET'
+    }
+  }
+}
+
+export function POST_FOLLOW(id, token){
+  return {
+    url: `${API_URL}/follow/${id}`,
+    options: {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    }
+  }
+}
+
+export function DELETE_FOLLOW(id, token){
+  return {
+    url: `${API_URL}/follow/${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    }
+  }
+}

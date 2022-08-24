@@ -1,12 +1,13 @@
 .userBox {
   display: grid;
-  grid-template-columns: min-content auto min-content;
+  grid-template-columns: min-content auto auto;
   margin-bottom: 1rem;
-  background-color: #fff;
+  background-color: var(--light-color);
   padding: 1rem;
   align-items: center;
   gap: 2rem;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
 }
 
 .userInfoContent>h1,
@@ -19,6 +20,26 @@
   margin-bottom: 0;
 }
 
+.buttonContainer {
+  justify-self: right;
+}
+
 .buttonContainer>* {
   margin: 5px;
+}
+
+.userNav {
+  display: flex;
+  gap: 1rem;
+}
+
+.userNav>a {
+  border: 2px solid #f0f0f0;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+}
+
+.userNav>a:hover,
+.userNav>a:global(.active) {
+  background-color: #fafafa;
 }
