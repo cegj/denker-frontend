@@ -34,20 +34,22 @@ const LikeBtn = ({denkeId, likes, setLikes, userLikes, setUserLikes}) => {
   }, [likes, setUserLikes, userData])
 
   async function handleClick(){
-    if (userLikes){
-      async function deleteLike(){
-        const {url, options} = DELETE_LIKE(denkeId, token)
-        const {response} = await request(url, options)
-        if (response.ok) setUserLikes(false)
-      }
-      deleteLike()
-    } else {
-      async function postLike(){
-        const {url, options} = POST_LIKE(denkeId, token)
-        const {response} = await request(url, options)
-        if (response.ok) setUserLikes(true)
-      }
-      postLike()
+    if (loggedIn){
+      if (userLikes){
+        async function deleteLike(){
+          const {url, options} = DELETE_LIKE(denkeId, token)
+          const {response} = await request(url, options)
+          if (response.ok) setUserLikes(false)
+        }
+        deleteLike()
+      } else {
+        async function postLike(){
+          const {url, options} = POST_LIKE(denkeId, token)
+          const {response} = await request(url, options)
+          if (response.ok) setUserLikes(true)
+        }
+        postLike()
+      }  
     }
   }
 
