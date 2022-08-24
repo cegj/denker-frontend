@@ -14,8 +14,7 @@ const User = () => {
       <div className="mainContainer">
         <Routes>
           <Route path="/timeline" element={<ProtectedRoute component = {<Timeline />} />} />
-          <Route path="/:id" element={<Profile />} />
-          <Route path="/:id" element={<Profile />} />
+          <Route path="/:id/*" element={<Profile />} />
           <Route path="/search" element={<UserSearch />} />
         </Routes>
       </div>
