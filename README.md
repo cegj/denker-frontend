@@ -29,36 +29,39 @@ Backend desenvolvido em REST API com Node.js / Express: [veja o repositório aqu
 
 <div align="center">
 <img src="https://imgur.com/Czc0OTb.png" alt="Tela inicial / Home screen">
-<p>Tela inicial / Home screen</p>
+<p>Tela inicial / Home screen<br/>
 <a href="https://denker.herokuapp.com/">Clique aqui para navegar nessa página</a>
+</p>
 
 <img src="https://imgur.com/VwZs27P.png" alt="Linha do tempo / Timeline">
-<p>Linha do tempo / Timeline</p>
-<a href="https://denker.herokuapp.com/user/timeline">Clique aqui para navegar nessa página</a>
+<p>Linha do tempo / Timeline<br/>
+<a href="https://denker.herokuapp.com/user/timeline">Clique aqui para navegar nessa página</a><br/>
 <i>A navegação nessa página requer login, você pode criar uma conta para experimentar</i>
+</p>
 
 <img src="https://imgur.com/4x9NdzA.png" alt="Página de post / Post page">
-<p>Página de post / Post page</p>
+<p>Página de post / Post page <br/>
 <a href="https://denker.herokuapp.com/denke/24">Clique aqui para navegar nessa página</a>
-
+</p>
 
 <img src="https://imgur.com/fXGrctf.png" alt="Outra página de post / Another post page">
-<p>Outra página de post / Another post page</p>
+<p>Outra página de post / Another post page<br/>
 <a href="https://denker.herokuapp.com/denke/45">Clique aqui para navegar nessa página</a>
-
+</p>
 
 <img src="https://imgur.com/30RY0Js.png" alt="Página de usuário / User page">
-<p>Página de usuário / User page</p>
+<p>Página de usuário / User page<br/>
 <a href="https://denker.herokuapp.com/denke/45">Clique aqui para navegar nessa página</a>
-
+</p>
 
 <img src="https://imgur.com/HLDCdTM.png" alt="Seguidores do usuário / User followers">
-<p>Seguidores do usuário / User followers</p>
+<p>Seguidores do usuário / User followers<br/>
 <a href="https://denker.herokuapp.com/user/3/followers">Clique aqui para navegar nessa página</a>
+</p>
 
 <img src="https://imgur.com/y9n3LbO.png" alt="Busca de usuários / User search">
-<p>Busca de usuários / User search</p>
+<p>Busca de usuários / User search<br/>
 <a href="https://denker.herokuapp.com/user/search">Clique aqui para navegar nessa página</a>
-
+</p>
 
 </div>
