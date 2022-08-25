@@ -1,6 +1,7 @@
 .follows>div {
-  display: flex;
+  display: grid;
   gap: 15px;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .follows>div>div {
@@ -8,6 +9,7 @@
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
   padding: 1rem;
+  width: 160px;
 }
 
 .follows>h2 {
