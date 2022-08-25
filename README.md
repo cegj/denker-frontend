@@ -14,7 +14,9 @@
 
 Criado por [mim](https://github.com/cegj), com **React**, para fins de aprendizado.
 
-Denker é uma rede social para compartilhar seus pensamentos e acompanhar os pensamentos dos seus amigos. Você pode seguir pessoas, curtir e comentar as postagens deles (chamados, aqui, de denkes) e publicar os seus próprios denkes com ou sem fotos.
+Denker é uma rede social para compartilhar seus pensamentos e acompanhar os pensamentos dos seus amigos.
+
+💡 Denker significa "pensador" em alemão. Na rede social, denker é um usuário, e denkes são seus posts.
 
 ## Stack
 
