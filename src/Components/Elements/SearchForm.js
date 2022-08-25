@@ -27,7 +27,7 @@ const SearchForm = ({setResults}) => {
       <form onSubmit={handleSubmit} className={styles.searchForm}>
           <input value={value} onChange={onChange} type="text" placeholder="Digite para buscar pelo nome, nome de usuário e e-mail"/>
           <span className={styles.btnContainer}>
-            <Button unfilled>Buscar</Button>
+            {fetch.loading ? <Button unfilled>Buscando...</Button> : <Button unfilled>Buscar</Button>}
           </span>
       </form>
       {(error || fetch.error) && <Error error={error}/>}
