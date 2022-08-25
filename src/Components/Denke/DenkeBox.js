@@ -9,6 +9,7 @@ import { GET_DENKE_LIKES } from '../../API'
 import useFetch from '../../Hooks/useFetch'
 import LikesBox from './LikesBox'
 import DeleteBtn from '../Elements/DeleteBtn'
+import {ReactComponent as ArrowLeft} from '../../Assets/icons/arrow-left.svg'
 
 const DenkeBox = ({denke, type = 'main', showLikeBox = false, showAvatar = true}) => {
 
@@ -36,6 +37,10 @@ const DenkeBox = ({denke, type = 'main', showLikeBox = false, showAvatar = true}
             <UserAvatar image={denke.user_image} username={denke.user_username} id={denke.user_id}/>
           </div>
         }
+        {type !== 'reply' && denke.denke_id && 
+        <span className={styles.answerToLink}>
+          <Link to={`/denke/${denke.denke_id}`}><ArrowLeft/> Em resposta</Link>
+        </span>}
         <Link className={`${styles.denkeContainer} ${styles[type]}`} to={`/denke/${denke.id}`}>
           <p className={`${styles.denkeContent} ${styles[type]}`}>
             {denke.content}

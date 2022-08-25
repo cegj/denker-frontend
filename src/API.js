@@ -37,6 +37,16 @@ export function GET_USER(token){
   }
 }
 
+export function USER_SEARCH(query){
+  return {
+    url: `${API_URL}/user/search?q=${query}`,
+    options: {
+      method: 'GET',
+    }
+  }
+}
+
+
 export function POST_DENKE(token, formData){
   return {
     url: `${API_URL}/denke/create`,

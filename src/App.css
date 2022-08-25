@@ -40,6 +40,10 @@ body {
   overflow-y: scroll;
 }
 
+h2 {
+  margin-bottom: 1rem;
+}
+
 /* Background */
 body {
   background-color: #f9f9f9;

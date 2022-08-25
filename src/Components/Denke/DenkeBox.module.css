@@ -89,3 +89,12 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+.answerToLink>a {
+  font-size: .875rem;
+  color: var(--dark-color-subtle);
+}
+
+.answerToLink svg {
+  max-height: 10px;
+}

@@ -1,8 +1,22 @@
 import React from 'react'
 import styles from './UserFollows.module.css';
 import FollowBox from '../Elements/FollowBox';
+import { GET_FOLLOWERS } from '../../API';
+import useFetch from '../../Hooks/useFetch';
 
-const UserFollowers = ({followers}) => {
+const UserFollowers = ({userId}) => {
+
+  const [followers, setFollowers] = React.useState(null)
+  const {request} = useFetch()
+
+  React.useEffect(() => {
+    async function getFollowers(){
+        const {url, options} = GET_FOLLOWERS(userId);
+        const {response, json} = await request(url, options);
+        if (response.ok) setFollowers(json.followers)
+      };
+      getFollowers()
+  }, [request, userId])
 
   if (followers)
   return (

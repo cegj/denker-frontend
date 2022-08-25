@@ -1,0 +1,33 @@
+.searchFormContainer {
+  margin-bottom: 2rem;
+}
+
+.searchForm {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.searchForm>input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 3rem;
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+  font-size: 1rem;
+  height: 55px;
+}
+
+.searchForm>input:focus,
+.searchForm>input:hover,
+.searchForm>input:active {
+  outline: 2px solid var(--emphasis-color);
+}
+
+.btnContainer>* {
+  border-radius: 50px;
+  margin: 0;
+  height: 50px;
+}

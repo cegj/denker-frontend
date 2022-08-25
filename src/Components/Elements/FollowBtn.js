@@ -5,7 +5,7 @@ import { UserContext } from '../../Context/UserContext'
 import { DELETE_FOLLOW, POST_FOLLOW } from '../../API'
 import useFetch from '../../Hooks/useFetch'
 
-const FollowBtn = ({id, followers, setUpdateFollowers}) => {
+const FollowBtn = ({id, followers, getFollowers}) => {
 
   const {loggedIn, userData} = React.useContext(UserContext);
   const {request} = useFetch();
@@ -35,6 +35,7 @@ const FollowBtn = ({id, followers, setUpdateFollowers}) => {
       })}}, [followers, isCurrentUser, loggedIn, userData])
 
     React.useEffect(() => {
+      console.log(userFollows)
       if (buttonText.current){
         if (userFollows === true) buttonText.current.innerText = 'Deixar de seguir'
         if (userFollows === false) buttonText.current.innerText = 'Seguir'  
@@ -48,7 +49,7 @@ const FollowBtn = ({id, followers, setUpdateFollowers}) => {
         const {response} = await request(url, options)
         if (response.ok){
           setUserFollows(false)
-          setUpdateFollowers(true)
+          getFollowers(id)
         }
       }
       unfollowUser()
@@ -58,7 +59,7 @@ const FollowBtn = ({id, followers, setUpdateFollowers}) => {
         const {response} = await request(url, options)
         if (response.ok) {
           setUserFollows(true)
-          setUpdateFollowers(true)
+          getFollowers(id);
         }
       }
       followUser()
