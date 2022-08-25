@@ -16,7 +16,7 @@ Criado por [mim](https://github.com/cegj), com **React**, para fins de aprendiza
 
 Denker é uma rede social para compartilhar seus pensamentos e acompanhar os pensamentos dos seus amigos. Você pode seguir pessoas, curtir e comentar as postagens deles (chamados, aqui, de denkes) e publicar os seus próprios denkes com ou sem fotos.
 
-# Stack
+## Stack
 
 - React;
 - HTML;
@@ -25,7 +25,7 @@ Denker é uma rede social para compartilhar seus pensamentos e acompanhar os pen
 
 Backend desenvolvido em REST API com Node.js / Express: [veja o repositório aqui](https://github.com/cegj/denker-backend).
 
-# Imagens e links para navegação
+## Imagens e links para navegação
 
 <div align="center">
 <img src="https://imgur.com/Czc0OTb.png" alt="Tela inicial / Home screen">
