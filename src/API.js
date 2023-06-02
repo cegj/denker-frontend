@@ -1,6 +1,6 @@
-export const API_URL = 'https://denkerapi.herokuapp.com'
-export const API_USER_IMAGE_URL = 'https://denkerapi.herokuapp.com/public/imgs/user/'
-export const API_DENKE_IMAGE_URL = 'https://denkerapi.herokuapp.com/public/imgs/denke/'
+export const API_URL = 'https://#'
+export const API_USER_IMAGE_URL = 'https://#/public/imgs/user/'
+export const API_DENKE_IMAGE_URL = 'https://#/public/imgs/denke/'
 
 export function POST_CREATE_USER(formData){
   return {
